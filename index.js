@@ -18,6 +18,7 @@ app.post('/completions', (request, response) => {
 
     const prompt = JSON.stringify(request.body);// The text from client-side
 
+    // Call OpenAI API Completions function
     (async () => {
         const url = "https://api.openai.com/v1/engines/text-curie-001/completions";
         const params = {
