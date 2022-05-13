@@ -11,38 +11,38 @@ app.use(express.static('public')); // Local folder for html
 app.use(express.json({limit: '1mb'}));
 
 
-
-// // Test OPENAI call
-// const prompt = `Artist: Megadeth\n\nCareer:\n`;
-
-// (async () => {
-//   const url = "https://api.openai.com/v1/engines/text-curie-001/completions";
-//   const params = {
-//     "prompt": prompt,
-//     "max_tokens": 64,
-//     "temperature": 0.7,
-//     "frequency_penalty": 0.5
-//   };
-//   const headers = {
-//     'Authorization': `Bearer ${process.env.OPENAI_API}`,
-//   };
-
-//   try {
-//     const response = await got.post(url, { json: params, headers: headers }).json();
-//     output = `${prompt}${response.choices[0].text}`;
-//     console.log(output);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// })();
-
-
+// OpenAI Completions function
 app.post('/completions', (request, response) => {
     console.log("Got it");
     console.log(request.body);
 
-    response.json({
-        status: "congrat",
-        prompt: request.body.prompt
-    });
+    const prompt = `Artist: Megadeth\n\nCareer:\n`;
+
+    (async () => {
+        const url = "https://api.openai.com/v1/engines/text-curie-001/completions";
+        const params = {
+            "prompt": prompt,
+            "max_tokens": 64,
+            "temperature": 0.7,
+            "frequency_penalty": 0.5
+        };
+        const headers = {
+            'Authorization': `Bearer ${process.env.OPENAI_API}`,
+        };
+
+        try {
+            const answer = await got.post(url, { json: params, headers: headers }).json();
+            output = `${prompt}${answer.choices[0].text}`;
+            console.log(output);
+
+            // Return the response to the client side
+            response.json({
+                status: "congrat",
+                prompt: request.body.prompt,
+                output: output
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    })();
   })
