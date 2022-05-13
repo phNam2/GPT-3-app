@@ -16,7 +16,7 @@ app.post('/completions', (request, response) => {
     console.log("Got it");
     console.log(request.body);
 
-    const prompt = `Artist: Megadeth\n\nCareer:\n`;
+    const prompt = JSON.stringify(request.body);// The text from client-side
 
     (async () => {
         const url = "https://api.openai.com/v1/engines/text-curie-001/completions";
@@ -32,7 +32,7 @@ app.post('/completions', (request, response) => {
 
         try {
             const answer = await got.post(url, { json: params, headers: headers }).json();
-            output = `${prompt}${answer.choices[0].text}`;
+            output = `${answer.choices[0].text}`;
             console.log(output);
 
             // Return the response to the client side
