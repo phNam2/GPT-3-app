@@ -35,3 +35,14 @@ app.use(express.json({limit: '1mb'}));
 //     console.log(err);
 //   }
 // })();
+
+
+app.post('/completions', (request, response) => {
+    console.log("Got it");
+    console.log(request.body);
+
+    response.json({
+        status: "congrat",
+        prompt: request.body.prompt
+    });
+  })
