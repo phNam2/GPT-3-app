@@ -1,7 +1,7 @@
-import Search from "./SearchView.js"
-import Chat from "./ChatView.js"
-import SearchHistory from "./SearchHisView.js"
-import ChatHistory from "./ChatHisView.js"
+import Search from "./View/SearchView.js"
+import Chat from "./View/ChatView.js"
+import SearchHistory from "./View/SearchHisView.js"
+import ChatHistory from "./View/ChatHisView.js"
 
 const navigateTo = url => {
     history.pushState(null, null, url);
