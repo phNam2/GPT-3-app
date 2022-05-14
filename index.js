@@ -1,13 +1,18 @@
 const express = require('express');
 require('dotenv').config();
 const got = require('got');
-
+const app = express();
+const path = require("path");
 
 // Set up the web port host
-const app = express();
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server at ${port}`)); //http://localhost:3000
 app.use(express.static('public')); // Local folder for html
+app.use(express.static('route')); // Not veer neccessary
+app.get("/*", (req, res) => {
+    res.sendFile(path.resolve("public", "index.html"));
+}); // lead all the router to the index.html original
 app.use(express.json({limit: '1mb'}));
 
 
