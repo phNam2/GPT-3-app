@@ -8,8 +8,9 @@ export default class extends AbstracView {
 
     async getHtml() {
         return `
+        <div id="SearchContainer">
             <div id="ask">
-                <h1>Enter the prompt</h1>
+                <h1>Giigle</h1>
                 <input type="text" placeholder="Write something here..." id="prompt">
                 <button onclick="enter()">
                     <span class="text">Submit</span>
@@ -17,10 +18,11 @@ export default class extends AbstracView {
             </div>
 
             <div id="result">
-                <h1>Response</h1><br>
-                <ul id="response">
+                <h2>Responses:</h2><br>
+                <div id="response">
 
-                </ul>
-            </div>`;
+                </div>
+            </div>
+        <div>`;
     }
 }
