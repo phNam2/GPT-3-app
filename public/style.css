@@ -1,10 +1,18 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 /* Navigation var style */
-body {
-    background-color:white;
+#nav{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    width: 100%;
 }
 
 ul {
-    list-style-type: none;
+    /* list-style-type: none; */
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -24,7 +32,7 @@ li a, .dropbtn {
 }
   
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: rgb(13, 220, 31);
 }
   
 li.dropdown {
@@ -53,6 +61,7 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 
 /* Body style */
 #prompt{

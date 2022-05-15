@@ -13,22 +13,26 @@
 </head>
 <body>
     <!-- Navigation bar -->
-    <ul>
-        <li class="dropdown">
-            <a href="#home" class="dropbtn">Search</a>
-            <div class="dropdown-content">
-                <a href="/" data-link>Showcase</a>
-                <a href="/searchHistory" data-link>History</a>
-            </div>
-        </li>
-        <li class="dropdown">
-            <a href="#news" class="dropbtn">Chat AI</a>
-            <div class="dropdown-content">
-                <a href="/chat" data-link>Showcase</a>
-                <a href="/chatHistory" data-link>History</a>
-            </div>
-        </li>
-      </ul>
+    <nav id="nav">
+        <ul>
+            <li class="dropdown">
+                <a href="#home" class="dropbtn">Search</a>
+                <div class="dropdown-content">
+                    <a href="/" data-link>Showcase</a>
+                    <a href="/searchHistory" data-link>History</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#news" class="dropbtn">Chat AI</a>
+                <div class="dropdown-content">
+                    <a href="/chat" data-link>Showcase</a>
+                    <a href="/chatHistory" data-link>History</a>
+                </div>
+            </li>
+            <li style="float:right"><a class="active" href="https://github.com/phNam2/GPT-3-app">About</a></li>
+        </ul>
+    </nav>
+    
 
     <!-- HTML Views page -->
     <div id="app"></div>
