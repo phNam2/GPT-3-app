@@ -64,9 +64,49 @@ li.dropdown {
 
 
 /* Body style */
+#ask {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #prompt{
-    width: 100%;
+    width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    border-radius:10px;
+}
+
+#ask > button{
+    background-color: #17abc5; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius:10px;
+}
+
+#response{
+    margin: 20px;
+    border: 10px;
+    padding-left: 10px;
+}
+
+#response > div{
+    margin: 10px;
+    padding: 20px;
+    border-radius:10px;
+}
+
+#response > div:nth-child(odd) {
+    background-color: rgb(222, 161, 161);
+}
+
+#response > div:nth-child(even) {
+    background-color: rgb(165, 157, 157);
 }

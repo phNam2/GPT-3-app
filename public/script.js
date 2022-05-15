@@ -16,7 +16,7 @@ async function enter () {
 
     // Create the response part
     const res = document.getElementById("response");
-    let group = document.createElement('i');
+    let group = document.createElement('div');
     let prompting = document.createElement('div');
     let prompTitle = document.createElement('h3');
     let promtDescription = document.createElement('p');
@@ -36,9 +36,10 @@ async function enter () {
     group.appendChild(prompting);
     group.appendChild(responding);
 
+
     if (res.firstChild == null) {
         res.appendChild(group);
-    } else {
+    } else{
         res.insertBefore(group, res.firstChild);
     }
     
