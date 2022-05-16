@@ -63,7 +63,7 @@ li.dropdown {
 }
 
 
-/* Body style */
+/* Body main page style */
 #ask {
     text-align: center;
     display: flex;
@@ -110,3 +110,28 @@ li.dropdown {
 #response > div:nth-child(even) {
     background-color: rgb(165, 157, 157);
 }
+
+
+/* Body Search history style */
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #777;
+    color: white;
+    padding: 18px;
+    margin: 0px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  } 
+
+ .content {
+    margin: 0px 0px 20px 0px;
+    padding: 18px;
+    background-color: #f1f1f1;
+  }
+
+  .content > p {
+      margin: 0px;
+  }
