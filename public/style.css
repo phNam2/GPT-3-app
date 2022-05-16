@@ -126,12 +126,25 @@ li.dropdown {
     font-size: 15px;
   } 
 
- .content {
+.content {
     margin: 0px 0px 20px 0px;
     padding: 18px;
     background-color: #f1f1f1;
-  }
+}
 
-  .content > p {
-      margin: 0px;
-  }
+.content > p {
+    margin: 0px;
+}
+
+#historyButton{
+    background-color: #dfdf10; /* Green */
+    border: none;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius:10px;
+    margin-bottom: 20px;
+}
