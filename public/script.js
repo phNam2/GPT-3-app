@@ -17,11 +17,11 @@ async function getResponse(prompt) {
 
 // Submitting a prompt to the OpenAI and return it to the search page
 async function enter () {
-    const prompt = document.getElementById("prompt").value;
+    let prompt = document.getElementById("prompt").value;
     document.getElementById("prompt").value = "";
     let result = await getResponse(prompt);
 
-    // Create the response part
+    // Create the response View in Seaarch page
     const res = document.getElementById("response");
     let group = document.createElement('div');
     let prompting = document.createElement('div');
@@ -49,24 +49,45 @@ async function enter () {
     } else{
         res.insertBefore(group, res.firstChild);
     }
-    
+
+    // Add the search result to the local storage
+    addToLocalStorage(result.prompt, result.output);
+
 }
 
-{/* <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-        var x = coll.length
-        console.log(x);
-        
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-              content.style.display = "none";
-            } else {
-              content.style.display = "block";
-            }
-          });
+
+// Add the search result to the local storage
+function addToLocalStorage(prompt, output) {
+    let newKey = (Math.random() + 1).toString(36).substring(7);
+    const searchResult = JSON.stringify({prompt: prompt, output: output});
+
+    // Making the list of keys for the response
+    let keys = localStorage.getItem("keys");
+    if (keys==null) {
+      localStorage.setItem("keys", JSON.stringify([newKey]));
+    } else {
+      let keysList = JSON.parse(keys);
+      let test = false;
+      let breakup = true;
+      while (test==false) {
+        for (i=0; i<keysList.length; i++) {
+          if (keysList[i]==newKey) {
+            newKey = (Math.random() + 1).toString(36).substring(7);
+            breakup = false;
+          }
         }
-    </script> */}
+        if (breakup == true) {
+          test = true;
+        }
+      }
+      keysList.push(newKey);
+      localStorage.setItem("keys", JSON.stringify(keysList));
+    }
+    // Add response to the local storage
+    localStorage.setItem(newKey, searchResult);
+}
+
+// Function print out the search history
+document.addEventListener("DOMContentLoaded", () =>{
+    let container = document.getElementById("historyContainer");
+});
