@@ -1,7 +1,5 @@
-async function enter () {
-    const prompt = document.getElementById("prompt").value;
-    document.getElementById("prompt").value = "";
-
+// Submit a prompt to get the respone from OpenAI
+async function getResponse(prompt) {
     const data = {prompt};
     const options = {
         method: 'POST',
@@ -11,8 +9,17 @@ async function enter () {
         body: JSON.stringify(data)
     };
     const response = await fetch('/completions', options);
-    const result = await response.json();
+    let result = await response.json();
     console.log(result);
+
+    return result;
+}
+
+// Submitting a prompt to the OpenAI and return it to the search page
+async function enter () {
+    const prompt = document.getElementById("prompt").value;
+    document.getElementById("prompt").value = "";
+    let result = await getResponse(prompt);
 
     // Create the response part
     const res = document.getElementById("response");
@@ -44,3 +51,22 @@ async function enter () {
     }
     
 }
+
+{/* <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        var x = coll.length
+        console.log(x);
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+    </script> */}
