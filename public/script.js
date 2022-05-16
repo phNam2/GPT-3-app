@@ -85,9 +85,50 @@ function addToLocalStorage(prompt, output) {
     }
     // Add response to the local storage
     localStorage.setItem(newKey, searchResult);
+    addHistory();
 }
 
 // Function print out the search history
-document.addEventListener("DOMContentLoaded", () =>{
-    let container = document.getElementById("historyContainer");
-});
+function addHistory() {
+  let keys = localStorage.getItem("keys");
+  const container = document.getElementById("historyContainer");
+  console.log(keys);
+
+  // Create new Child node for search history
+  if (keys==null) {
+
+  } else {
+    let keysList = JSON.parse(keys);
+    for (i=0; i<keysList.length; i++) {
+      let x = localStorage.getItem(keysList[i]);
+      let hist = JSON.parse(x);
+
+      let resCon = document.createElement('div');
+      resCon.id = keysList[i];
+      let prompt = document.createElement('div');
+      prompt.classList.add("collapsible");
+      let response = document.createElement('div');
+      response.classList.add("content");
+      let content = document.createElement('p');
+
+      if (hist.prompt == "") {
+        prompt.innerHTML = `"No question from human"`
+      } else {
+        prompt.innerHTML = hist.prompt;
+      }
+      
+      content.innerHTML = hist.output;
+
+      response.appendChild(content);
+      resCon.appendChild(prompt);
+      resCon.appendChild(response);
+
+      // container.appendChild(resCon);
+      if (container.firstChild == null) {
+        container.appendChild(resCon);
+      } else{
+        container.insertBefore(resCon, container.firstChild);
+      }
+    }
+  }
+}
