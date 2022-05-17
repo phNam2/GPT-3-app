@@ -169,7 +169,78 @@ function deleteHistory(currentItem) {
   localStorage.removeItem(key);
 }
 
-
+// Open the chat
 function chatBegin() {
+  document.getElementById("intro").style = "display:none";
+  document.getElementById("conversationContainer").style = "display:block";
 
+  // Get the previous conversation
+  let keys = localStorage.getItem("keysChat");
+}
+
+
+// The function that open the chat
+async function enterChat () {
+  let prompt = document.getElementById("chatPrompt").value;
+  document.getElementById("chatPrompt").value = "";
+
+  // Create the response View in Chat page
+  let converse = document.getElementById("conversation");
+  let human = document.createElement('div');
+  human.classList.add('talking');
+  human.classList.add('human');
+  let humanTalk = document.createElement('p');
+
+  humanTalk.innerHTML = prompt;
+  human.appendChild(humanTalk);
+  converse.appendChild(human);
+
+
+  let result = await getResponse(prompt);// Result came in
+  let bot = document.createElement('div');
+  bot.classList.add('talking');
+  bot.classList.add('bot');
+  let botTalk = document.createElement('p');
+
+  botTalk.innerHTML = result.output;
+  bot.appendChild(botTalk);
+  converse.appendChild(bot);
+
+  window.scrollTo(0, document.body.scrollHeight);// the page automaticall scoll to the bottom
+  
+  // Add the search result to the local storage
+  addToLocalStorage2(result.prompt, result.output);
+}
+
+
+// Add the conversation result to the local storage
+function addToLocalStorage2(prompt, output) {
+  console.log("Chat");
+  let newKey = "chat"+(Math.random() + 1).toString(36).substring(7);
+  const searchResult = JSON.stringify({prompt: prompt, output: output});
+
+  // Making the list of keys for the response
+  let keys = localStorage.getItem("keysChat");
+  if (keys==null) {
+    localStorage.setItem("keysChat", JSON.stringify([newKey]));
+  } else {
+    let keysList = JSON.parse(keys);
+    let test = false;
+    while (test==false) {
+      let breakup = true;
+      for (i=0; i<keysList.length; i++) {
+        if (keysList[i]==newKey) {
+          newKey = "chat"+(Math.random() + 1).toString(36).substring(7);
+          breakup = false;
+        }
+      }
+      if (breakup == true) {
+        test = true;
+      }
+    }
+    keysList.push(newKey);
+    localStorage.setItem("keysChat", JSON.stringify(keysList));
+  }
+  // Add response to the local storage
+  localStorage.setItem(newKey, searchResult);
 }

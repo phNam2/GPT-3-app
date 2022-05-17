@@ -172,13 +172,13 @@ li.dropdown {
     align-items: center;
 }
 
-#chatContainer > button {
+#intro > button {
     background-color: #000000;
     color: white;
     margin: 10px;
 }
 
-#chatContainer > button:hover{
+#intro > button:hover{
     background-color: #575454;
     color: white;
 }
@@ -186,7 +186,7 @@ li.dropdown {
 #conversationContainer {
     /* background-color: #ea124c; */
     width: 80%;
-
+    display: none;
 }
 
 #chatPrompt{
