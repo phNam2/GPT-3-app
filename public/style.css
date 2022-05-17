@@ -3,6 +3,19 @@
     font-family: sans-serif;
 }
 
+.pageButton {
+    border: none;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius:10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
 /* Navigation var style */
 #nav{
     position: -webkit-sticky; /* Safari */
@@ -79,21 +92,11 @@ li.dropdown {
 }
 
 #ask > button{
-    background-color: #17abc5; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 26px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 13px;
-    text-transform: uppercase;
-    border-radius:10px;
-    cursor: pointer;
+    background-color: #17abc5; 
 }
 
 #ask > button:hover{
-    background-color: #08515e; /* Green */
+    background-color: #08515e;
 }
 
 #response{
@@ -153,16 +156,6 @@ li.dropdown {
 
 #historyButton{
     background-color: #dfdf10;
-    border: none;
-    padding: 10px 26px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 13px;
-    text-transform: uppercase;
-    border-radius:10px;
-    margin-bottom: 20px;
-    cursor: pointer;
 }
 
 #historyButton:hover{
@@ -180,20 +173,64 @@ li.dropdown {
 }
 
 #chatContainer > button {
-    background-color: #ea124c;
-    border: none;
-    padding: 10px 26px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 13px;
-    text-transform: uppercase;
-    border-radius:10px;
-    margin-bottom: 20px;
-    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    margin: 10px;
 }
 
 #chatContainer > button:hover{
-    background-color: #ad3b5a;
+    background-color: #575454;
     color: white;
+}
+
+#conversationContainer {
+    /* background-color: #ea124c; */
+    width: 80%;
+
+}
+
+#chatPrompt{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px;
+    box-sizing: border-box;
+    border-radius:10px;
+}
+
+.talking{
+    font-size: small;
+    width: 20%;
+    padding: 5px;
+    margin: 8px;
+    box-sizing: border-box;
+    border-radius:10px;
+    display:inline-block;
+    clear: both;
+    border-radius: 30px;
+}
+
+.bot {
+    float: right;
+    background-color: #17abc5;
+}
+
+.human{
+    float:left;
+    background-color: #1fb96e;
+}
+
+.bot + .human{
+    border-bottom-right-radius: 5px;
+  }
+  
+#submitContainer{
+    display: flex; 
+    flex-direction: row; 
+    align-items: baseline; 
+
+    position: fixed;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
 }

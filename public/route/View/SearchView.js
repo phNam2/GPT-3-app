@@ -12,7 +12,7 @@ export default class extends AbstracView {
             <div id="ask">
                 <h1>Giigle</h1>
                 <input type="text" placeholder="Please ask anything, some may take time..." id="prompt">
-                <button onclick="enter()">
+                <button onclick="enter()" class="pageButton">
                     <span class="text">Submit</span>
                 </button>
             </div>
