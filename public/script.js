@@ -85,7 +85,6 @@ function addToLocalStorage(prompt, output) {
   }
   // Add response to the local storage
   localStorage.setItem(newKey, searchResult);
-  addHistory();
 }
 
 // Function print out the search history
@@ -105,6 +104,7 @@ function openSearchHistory() {
 
       let resCon = document.createElement('div');
       resCon.id = keysList[i];
+      let trashouter = document.createElement('div');
       let trash = document.createElement('i');
       trash.classList.add('fa-solid');
       trash.classList.add('fa-trash');
@@ -123,10 +123,15 @@ function openSearchHistory() {
       
       content.innerHTML = hist.output;
 
-      // trash.style="float: right; padding: 5px;";
+      // Add the click function for delete button
+      trashouter.addEventListener('click', function() {
+        deleteHistory(this.parentNode);
+      });
 
+      // trash.style="float: right; padding: 5px;";
+      trashouter.appendChild(trash);
       response.appendChild(content);
-      resCon.appendChild(trash);
+      resCon.appendChild(trashouter);
       resCon.appendChild(prompt);
       resCon.appendChild(response);
 
@@ -138,4 +143,15 @@ function openSearchHistory() {
       }
     }
   }
+}
+
+// Where function delete a history element
+function deleteHistory(currentItem) {
+  console.log(currentItem.id);
+
+  // Remove the elements from the front-end client side
+  parentItem = currentItem.parentNode;
+  parentItem.removeChild(currentItem);
+
+  
 }
