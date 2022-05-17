@@ -89,6 +89,8 @@ function addToLocalStorage(prompt, output) {
 
 // Function print out the search history
 function openSearchHistory() {
+  document.getElementById("historyButton").style = "display:none";
+
   let keys = localStorage.getItem("keys");
   const container = document.getElementById("historyContainer");
   console.log(keys);
