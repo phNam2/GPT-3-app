@@ -11,7 +11,7 @@ export default class extends AbstracView {
         <div id="SearchContainer">
             <div id="ask">
                 <h1>Giigle</h1>
-                <input type="text" placeholder="Write something here..." id="prompt">
+                <input type="text" placeholder="Please ask anything, some may take time..." id="prompt">
                 <button onclick="enter()">
                     <span class="text">Submit</span>
                 </button>
