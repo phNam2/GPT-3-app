@@ -147,11 +147,24 @@ function openSearchHistory() {
 
 // Where function delete a history element
 function deleteHistory(currentItem) {
-  console.log(currentItem.id);
+  let key = currentItem.id;
 
   // Remove the elements from the front-end client side
   parentItem = currentItem.parentNode;
   parentItem.removeChild(currentItem);
 
-  
+  // Delete the key element from the key list
+  let keys = localStorage.getItem("keys");
+  let keysList = JSON.parse(keys);
+  for (i=0; i<keysList.length; i++) {
+    console.log(keysList[i]);
+    if (key === keysList[i]) {
+      keysList.splice(i, 1);
+      console.log(keysList[i]);
+      break;
+    }
+  }
+  localStorage.setItem("keys", JSON.stringify(keysList)); // Update the key list
+  // Delete the key element from local storage
+  localStorage.removeItem(key);
 }
