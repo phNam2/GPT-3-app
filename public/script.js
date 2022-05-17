@@ -176,6 +176,37 @@ function chatBegin() {
 
   // Get the previous conversation
   let keys = localStorage.getItem("keysChat");
+  const converse = document.getElementById("conversation");
+
+  if (keys==null) {
+
+  } else {
+    let keysList = JSON.parse(keys);
+    for (i=0; i<keysList.length; i++) {
+      let x = localStorage.getItem(keysList[i]);
+      let consv = JSON.parse(x);
+
+      let human = document.createElement('div');
+      human.classList.add('talking');
+      human.classList.add('human');
+      let humanTalk = document.createElement('p');
+
+      humanTalk.innerHTML = consv.prompt;
+      human.appendChild(humanTalk);
+      converse.appendChild(human);
+
+      let bot = document.createElement('div');
+      bot.classList.add('talking');
+      bot.classList.add('bot');
+      let botTalk = document.createElement('p');
+
+      botTalk.innerHTML = consv.output;
+      bot.appendChild(botTalk);
+      converse.appendChild(bot);
+
+      window.scrollTo(0, document.body.scrollHeight);// the page automaticall scoll to the bottom
+    }
+  }
 }
 
 
