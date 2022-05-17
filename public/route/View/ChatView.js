@@ -8,6 +8,16 @@ export default class extends AbstracView {
 
     async getHtml() {
         return `
-            <p>This is chat view</p>`;
+            <div id="chatContainer">
+                <h1 id="chatWelcome">Hi, click the button to start the chat</h1>
+                <h3 id="chatWarning">Please remember, this is not Snapchat, your conversation won't go away</h3>
+                <button onclick="chatBegin()">
+                    <span class="text">OK</span>
+                </button>
+                <div id="conversation">
+
+                </div>
+            </div>`;
+    
     }
 }

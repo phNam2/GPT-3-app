@@ -168,3 +168,8 @@ function deleteHistory(currentItem) {
   // Delete the key element from local storage
   localStorage.removeItem(key);
 }
+
+
+function chatBegin() {
+
+}

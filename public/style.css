@@ -169,3 +169,31 @@ li.dropdown {
     background-color: #909020;
     color: white;
 }
+
+
+/* The Chat page style */
+#chatContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#chatContainer > button {
+    background-color: #ea124c;
+    border: none;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius:10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#chatContainer > button:hover{
+    background-color: #ad3b5a;
+    color: white;
+}
