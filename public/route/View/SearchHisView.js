@@ -9,7 +9,7 @@ export default class extends AbstracView {
     async getHtml() {
         return `
             <h1>Search History:</h1>
-            <button id="historyButton" onclick="addHistory()">
+            <button id="historyButton" onclick="openSearchHistory()">
                 <span class="text">Show</span>
             </button>
 
