@@ -209,6 +209,17 @@ function chatBegin() {
   }
 }
 
+function funChat(x){
+  let keys = localStorage.getItem("keysChat");
+  if(keys==null) {
+    chatBegin();
+  } else {
+    document.getElementById("chatWelcome").innerHTML = "Oh, you come back. Still want to play with it more, ey?";
+    document.getElementById("chatWarning").innerHTML = "Like I said, your conversation will be continued...";
+    x.style = "display:none";
+    document.getElementById("button2").style = "display:block";
+  }
+}
 
 // The function that open the chat
 async function enterChat () {

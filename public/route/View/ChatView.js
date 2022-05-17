@@ -12,8 +12,11 @@ export default class extends AbstracView {
                 <div id="intro">
                     <h1 id="chatWelcome">Hi, click the button to start the chat</h1>
                     <h3 id="chatWarning">Please remember, this is not Snapchat, your conversation won't go away</h3>
-                    <button onclick="chatBegin()" class="pageButton">
+                    <button onclick="funChat(this)" class="pageButton" id="button1">
                         <span class="text">OK</span>
+                    </button>
+                    <button onclick="chatBegin()" class="pageButton" id="button2">
+                        <span class="text">No problem</span>
                     </button>
                 </div>
                 <div id="conversationContainer">

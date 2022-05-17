@@ -172,6 +172,13 @@ li.dropdown {
     align-items: center;
 }
 
+#intro {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #intro > button {
     background-color: #000000;
     color: white;
@@ -233,4 +240,8 @@ li.dropdown {
     bottom: 0px;
     transform: translate(-50%, -50%);
     margin: 0 auto;
+}
+
+#button2 {
+    display:none;
 }
