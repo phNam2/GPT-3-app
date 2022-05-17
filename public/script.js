@@ -105,6 +105,10 @@ function addHistory() {
 
       let resCon = document.createElement('div');
       resCon.id = keysList[i];
+      let trash = document.createElement('i');
+      trash.classList.add('fa-solid');
+      trash.classList.add('fa-trash');
+      trash.classList.add('trash');
       let prompt = document.createElement('div');
       prompt.classList.add("collapsible");
       let response = document.createElement('div');
@@ -119,7 +123,10 @@ function addHistory() {
       
       content.innerHTML = hist.output;
 
+      // trash.style="float: right; padding: 5px;";
+
       response.appendChild(content);
+      resCon.appendChild(trash);
       resCon.appendChild(prompt);
       resCon.appendChild(response);
 

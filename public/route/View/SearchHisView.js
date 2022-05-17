@@ -14,7 +14,7 @@ export default class extends AbstracView {
             </button>
 
             <div id="historyContainer">
-
+                
             </div>`;
     }
 }
