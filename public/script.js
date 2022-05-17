@@ -68,8 +68,8 @@ function addToLocalStorage(prompt, output) {
   } else {
     let keysList = JSON.parse(keys);
     let test = false;
-    let breakup = true;
     while (test==false) {
+      let breakup = true;
       for (i=0; i<keysList.length; i++) {
         if (keysList[i]==newKey) {
           newKey = (Math.random() + 1).toString(36).substring(7);
