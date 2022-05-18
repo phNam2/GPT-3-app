@@ -3,7 +3,7 @@ import AbstracView from "./AbstractView.js"
 export default class extends AbstracView {
     constructor() {
         super();
-        this.setTitle("Chat");
+        this.setTitle("Search History");
     }
 
     async getHtml() {
