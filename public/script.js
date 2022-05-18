@@ -239,6 +239,7 @@ async function enterChat () {
   human.appendChild(humanTalk);
   converse.appendChild(human);
 
+  window.scrollTo(0, document.body.scrollHeight);// the page automaticall scoll to the bottom
 
   let result = await getResponse(prompt);// Result came in
   let bot = document.createElement('div');
