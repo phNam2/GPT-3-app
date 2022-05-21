@@ -46,5 +46,6 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
     });
 
+    window.addEventListener("popstate", router);// handle the back button
     router();
 });
