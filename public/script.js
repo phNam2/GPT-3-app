@@ -90,16 +90,26 @@ function addToLocalStorage(prompt, output) {
 // Function print out the search history
 function openSearchHistory() {
   document.getElementById("historyButton").style = "display:none";
+  textEmpty = document.getElementById("historyEmpty");
 
   let keys = localStorage.getItem("keys");
   const container = document.getElementById("historyContainer");
   console.log(keys);
 
   // Create new Child node for search history
+  // Check if the user have done search beforehand
   if (keys==null) {
-
+    textEmpty.style = "display: block";
+    textEmpty.innerHTML = "You have not done any search";
   } else {
     let keysList = JSON.parse(keys);
+
+    // Chexk if the user search list is empty because they delete it all
+    if( keysList.length == 0) {
+      textEmpty.style = "display: block";
+      textEmpty.innerHTML = "You have deleted all of your search result";
+    }
+
     for (i=0; i<keysList.length; i++) {
       let x = localStorage.getItem(keysList[i]);
       let hist = JSON.parse(x);

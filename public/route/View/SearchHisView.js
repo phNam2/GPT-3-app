@@ -13,6 +13,7 @@ export default class extends AbstracView {
                 <span class="text">Show</span>
             </button>
 
+            <h3 id="historyEmpty"></h3>
             <div id="historyContainer">
                 
             </div>`;

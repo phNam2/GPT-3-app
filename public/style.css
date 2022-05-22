@@ -163,6 +163,10 @@ li.dropdown {
     color: white;
 }
 
+#historyEmpty{
+    display: none;
+}
+
 
 /* The Chat page style */
 #chatContainer {
