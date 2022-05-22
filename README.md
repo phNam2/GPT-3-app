@@ -2,7 +2,7 @@
 [Link](https://openai-search-app.herokuapp.com) to the web page on heroku
 
 ## How to run the app from local:
-### Istallation
+### Installation
 ```shell
 git clone https://github.com/phNam2/GPT-3-app.git
 npm install
