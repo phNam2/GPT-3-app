@@ -10,6 +10,6 @@ npm install
 
 ### Run
 ```bash
-cd ../GPT-3-app
+cd GPT-3-app
 node index.js
 ```
