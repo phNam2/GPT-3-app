@@ -13,6 +13,11 @@ node -v
 ```
 <p>If not, go to (https://nodejs.org/en/) to get the latest version</p>
 
+### Create .env file for API variable. In the file, write:
+```bash
+OPENAI_API='Your openAI key'
+```
+
 ### Run
 ```bash
 cd GPT-3-app
