@@ -1,5 +1,5 @@
 # GPT-3-app
-[Link](https://openai-search-app.herokuapp.com) to the web page
+[Link](https://openai-search-app.herokuapp.com) to the web page on heroku
 
 ## How to run the app from local:
 ### Istallation
