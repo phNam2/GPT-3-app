@@ -7,6 +7,11 @@
 git clone https://github.com/phNam2/GPT-3-app.git
 npm install
 ```
+### Make sure you have node.js install
+```bash
+node -v
+```
+<p>If not, go to (https://nodejs.org/en/) to get the latest version</p>
 
 ### Run
 ```bash
