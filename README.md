@@ -1,5 +1,9 @@
 # GPT-3-app
 [Link](https://openai-search-app.herokuapp.com) to the web page on heroku
+__The API key to OpenAI for this website is already expired, so the website won't be responsive for any request. Please set up your own OpenAI key and follow the step below to test the functionality__
+
+## OpenAI website
+[Link](https://openai.com/api/)
 
 ## How to run the app from local:
 ### Installation
